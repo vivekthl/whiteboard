@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>Whiteboard</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body onload="init()">
+
+  <canvas class="canvas" id="canvas"></canvas>
+  <canvas class="canvas" id="selectorCanvas"></canvas>
+  <canvas class="canvas" id="cursorCanvas"></canvas>
+
+  <div class="toolbox" id="toolBox">
+    <div class="colorSwatch" ></div>
+    <div class="colorSwatch" id="csBlue"></div>
+    <div class="colorSwatch" id="csRed"></div>
+    <div class="colorSwatch" id="csGreen"></div>
+    <div class="colorSwatch" id="csWhite"></div>
+    <div class="colorSwatch" id="csBlack"></div>
+    <div class="selector" id="selector" onclick="startSelector();"></div>
+  </div>
+  
+  <div class="displaySize" id="displaySize"></div>
+  
+</body>
+
+<script type="text/javascript">
+    
+  function init()
+  {      
+      canvas = document.getElementById("canvas");
+      cursorCanvas = document.getElementById("cursorCanvas");
+      selectorCanvas = document.getElementById("selectorCanvas");
+      
+      canvasContext = canvas.getContext("2d");
+      cursorCanvasContext = cursorCanvas.getContext("2d");
+      selectorCanvasContext = selectorCanvas.getContext("2d");
+      
+      displaySize = document.getElementById("displaySize");
+      
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      cursorCanvas.width = window.innerWidth;
+      cursorCanvas.height = window.innerHeight;
+      selectorCanvas.width = window.innerWidth;
+      selectorCanvas.height = window.innerHeight;
+
+      canvas.style.zIndex = "0";
+      cursorCanvas.zIndex = "300";
+      selectorCanvas.zIndex = "1";
+      
+      canvasContext.lineWidth = markerSize;
+      canvasContext.fillStyle = "white";
+      canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+
+      //Cursor canvas click events
+
+      document.getElementById("cursorCanvas").onmousedown = function(event) {
+          selectAction('down', event);
+      } 
+
+      document.getElementById("cursorCanvas").onmousemove = function(event) {
+          selectAction('move', event); 
+          drawCursor(event);
+      }
+
+      document.getElementById("cursorCanvas").onmouseup = function(event) {
+          selectAction('up', event); 
+          stopSelector();
+      } 
+
+      document.getElementById("cursorCanvas").onclick = function() {
+          drawPoint();
+      }  
+
+      document.getElementById("cursorCanvas").onkeypress = function(event) {
+          processKey(event);
+      }
+
+      //Colors swatch click events
+      
+      document.getElementById("csBlue").onclick = function() {
+          setMarkerColor("darkblue");
+      }
+      document.getElementById("csRed").onclick = function() {
+          setMarkerColor("darkred");
+      }
+      document.getElementById("csGreen").onclick = function() {
+          setMarkerColor("darkgreen");
+      }
+      document.getElementById("csWhite").onclick = function() {
+          setMarkerColor("white");
+      }
+      document.getElementById("csBlack").onclick = function() {
+          setMarkerColor("black");
+      }
+
+      //Window key down/up events
+
+      window.addEventListener('keydown', this.processKey, false);
+      window.addEventListener('keyup', this.processOnKeyUp, false);
+  }
+
+</script>
+</html>
