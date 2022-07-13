@@ -1,0 +1,90 @@
+body,html 
+{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#444;
+}
+
+.canvas {
+    cursor:none;
+    position:absolute;
+    left:0px;
+    top:0px;
+    border:0px;
+    margin:0px;
+    padding:0px;
+}
+
+.toolbox {
+    background-color:#f1f1f1;
+    width:0px;
+    height:100%;
+    z-index:100;
+    cursor:pointer;
+
+    position:absolute;
+    left:0px;
+    top:0px;
+    border:0px;
+    margin:0px;
+    padding:0px;
+    text-align:center;
+    transition:0.5s;
+}
+
+.toolbox .selector {
+    border:1px dashed black;
+    display:block;
+    height:20px;
+    transition:0.3s;
+    visibility:hidden;
+}
+
+.toolbox .colorSwatch {
+    height:30px;
+    transition:0.3s;
+}
+
+.displaySize
+{
+    z-index:100;
+    position:absolute;
+    left:0px;
+    top:0px;
+    border:0px;
+    margin:0px;
+    padding:0px;
+    text-align:center;
+    visibility:hidden;
+    font-size:22px;
+    font-weight:bold;
+    width:30px;
+    height:30px;
+
+}
+
+#csBlue
+{
+    background-color:darkblue;
+}
+
+#csRed
+{
+    background-color:darkred;
+}
+
+#csGreen
+{
+    background-color:green;
+}
+
+#csWhite
+{
+    background-color:white;
+}
+
+#csBlack
+{
+    background-color:black;
+}
