@@ -71,7 +71,7 @@ body,html
 
     position:absolute;
     top:0px;
-    left: calc(30px * 0);
+    left: calc(30px * 1);
 
     width:30px;
     height:30px;
@@ -83,7 +83,7 @@ body,html
 
     position:absolute;
     top:0px;
-    left: calc(30px *1);
+    left: calc(30px *2);
 
     width:30px;
     height:30px;
@@ -96,7 +96,7 @@ body,html
 
     position:absolute;
     top:0px;
-    left: calc(30px * 2);
+    left: calc(30px * 3);
 
     width:30px;
     height:30px;
@@ -109,7 +109,7 @@ body,html
 
     position:absolute;
     top:0px;
-    left: calc(30px * 3);
+    left: calc(30px * 4);
 
     width:30px;
     height:30px;    
@@ -121,7 +121,7 @@ body,html
 
     position:absolute;
     top:0px;
-    left: calc(30px * 4);
+    left: calc(30px * 5);
 
     width:30px;
     height:30px;
@@ -130,7 +130,7 @@ body,html
 
 .toolbox .selector {
     position:absolute;
-    left: calc(30px * 5);
+    left: calc(30px * 7);
     top:0px;
     
     border:1px dashed black;
@@ -139,4 +139,27 @@ body,html
     width:30px;
     transition:0.3s;
     visibility:hidden;
+}
+
+
+.toolbox #clearButton {
+    position:absolute;
+    top:8px;
+    left: calc(30px * 9);
+
+    width:30px;
+    height:30px;
+
+    font-size:13px;
+}
+
+.toolbox #downloadButton {
+    position:absolute;
+    top:8px;
+    left: calc(30px * 11);
+
+    width:30px;
+    height:30px;
+
+    font-size:13px;
 }
