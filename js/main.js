@@ -12,8 +12,8 @@ var drawingEnabled = false;
 var markerColor = "darkblue";
 var toolbarVisibility = 0;
 var markerSize = 4;
-var contrainYMovement = false;
-var contrainXMovement = false;
+var constrainYMovement = false;
+var constrainXMovement = false;
 
 var selectorOn = false;
 var selectorStartX = 0;
@@ -53,11 +53,11 @@ function selectAction(action, event)
         previousY = currentY;
         currentX = event.clientX;
         currentY = event.clientY;
-        if(contrainYMovement)
+        if(constrainYMovement)
         {
             currentY = previousY;
         }
-        if(contrainXMovement)
+        if(constrainXMovement)
         {
             currentX = previousX;
         }
@@ -201,12 +201,12 @@ function processKey(event)
 
     if(event.shiftKey)
     {
-        contrainYMovement = true;
+        constrainYMovement = true;
     }
 
     if(event.ctrlKey)
     {
-        contrainXMovement = true;
+        constrainXMovement = true;
     }
 }
 
@@ -221,12 +221,12 @@ function processOnKeyUp(event)
 {
     if(!event.shiftKey)
     {
-        contrainYMovement = false;
+        constrainYMovement = false;
     }
 
     if(!event.ctrlKey)
     {
-        contrainXMovement = false;
+        constrainXMovement = false;
     }
 }
 
