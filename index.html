@@ -23,12 +23,9 @@
     <div class="button" id="downloadButton">Download</div>
 
     <div id="sizeSelectorText"> Size: </div>
-    <input class="textBox" type="range" id="markerSizeSelector" min="2" max="100"/>
+    <input class="textBox" type="range" id="markerSizeSelector" min="2" max="100" value="2"/>
         
   </div>
-  
-  <div class="displaySize" id="displaySize"></div>
-  
 </body>
 
 <script type="text/javascript">
@@ -42,9 +39,7 @@
       canvasContext = canvas.getContext("2d");
       cursorCanvasContext = cursorCanvas.getContext("2d");
       selectorCanvasContext = selectorCanvas.getContext("2d");
-      
-      displaySize = document.getElementById("displaySize");
-      
+            
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       cursorCanvas.width = window.innerWidth;

@@ -8,12 +8,10 @@ var canvasContext;
 var cursorCanvasContext;
 var selectorCanvasContext;
 
-var displaySize;
-
 var drawingEnabled = false;
 var markerColor = "darkblue";
 var toolbarVisibility = 0;
-var markerSize = 4;
+var markerSize = 2;
 var contrainYMovement = false;
 var contrainXMovement = false;
 
@@ -115,10 +113,10 @@ function draw()
 
 function drawPoint()
 {
-    // canvasContext.beginPath();
-    // canvasContext.fillStyle = markerColor ;
-    // canvasContext.arc(currentX, currentY, markerSize/2, 0, 2*Math.PI);
-    // canvasContext.fill();
+    canvasContext.beginPath();
+    canvasContext.fillStyle = markerColor ;
+    canvasContext.arc(currentX, currentY, markerSize/2, 0, 2*Math.PI);
+    canvasContext.fill();
 }
 
 
@@ -231,30 +229,6 @@ function processKey(event)
     {
         contrainXMovement = true;
     }
-    
-    if(event.keyCode == 187) //Key:+, Makersize ++
-    {
-        markerSize++;
-
-        displaySize.style.visibility = "visible";
-        displaySize.innerHTML = markerSize;
-
-        canvasContext.lineWidth  = markerSize;
-//        drawCursor(event);
-    }
-    else if(event.keyCode == 189) //Key:-, Markersize --
-    {
-        if(markerSize > 3)
-        {
-            markerSize--;
-        }
-
-        displaySize.style.visibility = "visible";
-        displaySize.innerHTML = markerSize;
-
-        canvasContext.lineWidth = markerSize;
-//        drawCursor(event);
-    }
 }
 
 function updateMarker(size, event){
@@ -274,15 +248,6 @@ function processOnKeyUp(event)
     if(!event.ctrlKey)
     {
         contrainXMovement = false;
-    }
-
-    if(event.keyCode == 187) //Makersize ++
-    {
-        displaySize.style.visibility = "hidden";        
-    }
-    else if(event.keyCode == 189) //Markersize --
-    {
-        displaySize.style.visibility = "hidden";
     }
 }
 
