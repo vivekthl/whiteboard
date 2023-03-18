@@ -199,27 +199,6 @@ function processKey(event)
         download("whiteboard");
     }
 
-    if(event.keyCode == 84) //Key:t, Toolbox
-    {
-        toolbarVisibility = Math.abs(1-toolbarVisibility);
-        var toolBox = document.getElementById("toolBox");
-        if(toolbarVisibility)
-        {
-            toolBox.style.width = "30px";
-            toolBox.querySelector("#selector").style.margin = "5px";
-            toolBox.querySelector("#selector").style.width = "20px";
-            toolBox.querySelector("#selector").style.visibility = "visible";
-        }
-        else
-        {
-            toolBox.style.width = "0";
-            toolBox.querySelector("#selector").style.margin = "0px";
-            toolBox.querySelector("#selector").style.width = "0px";
-            toolBox.querySelector("#selector").style.visibility = "hidden";
-
-        }
-    }
-
     if(event.shiftKey)
     {
         contrainYMovement = true;
