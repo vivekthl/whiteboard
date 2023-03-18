@@ -54,6 +54,15 @@
       canvasContext.fillStyle = "white";
       canvasContext.fillRect(0, 0, canvas.width, canvas.height);
 
+
+      // Tool box
+      var toolBox = document.getElementById("toolBox");
+      toolBox.style.width = "30px";
+      toolBox.querySelector("#selector").style.margin = "5px";
+      toolBox.querySelector("#selector").style.width = "20px";
+      toolBox.querySelector("#selector").style.visibility = "visible";
+          
+          
       //Cursor canvas click events
 
       document.getElementById("cursorCanvas").onmousedown = function(event) {
