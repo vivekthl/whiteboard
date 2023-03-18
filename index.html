@@ -21,6 +21,10 @@
     <div class="selector" id="selector" onclick="startSelector();"></div>
     <div class="button" id="clearButton">Clear</div>
     <div class="button" id="downloadButton">Download</div>
+
+    <div id="sizeSelectorText"> Size: </div>
+    <input class="textBox" type="range" id="markerSizeSelector" min="2" max="100"/>
+        
   </div>
   
   <div class="displaySize" id="displaySize"></div>
@@ -71,6 +75,11 @@
           download("whiteboard");
       });
       
+      document.getElementById("markerSizeSelector").addEventListener("input", function(event){
+          console.log(event);
+          updateMarker(document.getElementById("markerSizeSelector").value,
+                       event);
+      });
           
       //Cursor canvas click events
 

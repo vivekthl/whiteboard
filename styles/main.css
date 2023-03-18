@@ -63,6 +63,17 @@ body,html
 }
 
 
+.button {
+
+    cursor:pointer;
+    color:#7f7fff;
+
+
+    font-size:13px;
+    
+}
+
+
 
 #csBlue
 {
@@ -163,12 +174,18 @@ body,html
     font-size:13px;
 }
 
-.button {
+.toolbox #sizeSelectorText {
+    position:absolute;
+    top:8px;
+    left: calc(30px * 14);
 
-    cursor:pointer;
     color:#7f7fff;
-
-
     font-size:13px;
-    
+}
+
+.toolbox #markerSizeSelector {
+    position:absolute;
+    top:6px;
+    left: calc(30px * 15);
+
 }

@@ -115,10 +115,10 @@ function draw()
 
 function drawPoint()
 {
-    canvasContext.beginPath();
-    canvasContext.fillStyle = markerColor ;
-    canvasContext.arc(currentX, currentY, markerSize/2, 0, 2*Math.PI);
-    canvasContext.fill();
+    // canvasContext.beginPath();
+    // canvasContext.fillStyle = markerColor ;
+    // canvasContext.arc(currentX, currentY, markerSize/2, 0, 2*Math.PI);
+    // canvasContext.fill();
 }
 
 
@@ -240,7 +240,7 @@ function processKey(event)
         displaySize.innerHTML = markerSize;
 
         canvasContext.lineWidth  = markerSize;
-        drawCursor(event);
+//        drawCursor(event);
     }
     else if(event.keyCode == 189) //Key:-, Markersize --
     {
@@ -253,8 +253,15 @@ function processKey(event)
         displaySize.innerHTML = markerSize;
 
         canvasContext.lineWidth = markerSize;
-        drawCursor(event);
+//        drawCursor(event);
     }
+}
+
+function updateMarker(size, event){
+
+    markerSize = size;
+    canvasContext.lineWidth  = markerSize;
+    drawCursor(event);
 }
 
 function processOnKeyUp(event)
