@@ -63,7 +63,14 @@
       toolBox.querySelector("#selector").style.margin = "5px";
       toolBox.querySelector("#selector").style.width = "20px";
       toolBox.querySelector("#selector").style.visibility = "visible";
-          
+
+
+      // EVENT LISTENERS
+      document.getElementById("clearButton").addEventListener("click", clearCanvas);
+      document.getElementById("downloadButton").addEventListener("click", function(){
+          download("whiteboard");
+      });
+      
           
       //Cursor canvas click events
 
