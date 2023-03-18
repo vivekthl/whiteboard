@@ -169,24 +169,29 @@ function drawCursor(event)
     }
 }
 
+function clearCanvas()
+{
+    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+    canvasContext.fillStyle = "white";
+    canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+    selectorCanvasContext.clearRect(0, 0, 
+                                    cursorCanvas.width, 
+                                    cursorCanvas.height);
+
+    //Reset selector
+    selectorStartX = 0;
+    selectorStartY = 0;
+    selectorStopX = window.innerWidth;
+    selectorStopY = window.innerHeight;
+}
+
 //Key Processing
 
 function processKey(event)
 {
     if(event.keyCode == 67) //Key:c, Clear
     {
-        canvasContext.clearRect(0, 0, canvas.width, canvas.height);
-        canvasContext.fillStyle = "white";
-        canvasContext.fillRect(0, 0, canvas.width, canvas.height);
-        selectorCanvasContext.clearRect(0, 0, 
-                                        cursorCanvas.width, 
-                                        cursorCanvas.height);
-
-        //Reset selector
-        selectorStartX = 0;
-        selectorStartY = 0;
-        selectorStopX = window.innerWidth;
-        selectorStopY = window.innerHeight;
+        clearCanvas();
     }
 
     if(event.keyCode == 83) //Key:s, Save
@@ -273,8 +278,6 @@ function processOnKeyUp(event)
         displaySize.style.visibility = "hidden";
     }
 }
-
-//Download
 
 function download(filename) 
 {
