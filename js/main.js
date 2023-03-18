@@ -11,7 +11,7 @@ var selectorCanvasContext;
 var drawingEnabled = false;
 var markerColor = "darkblue";
 var toolbarVisibility = 0;
-var markerSize = 2;
+var markerSize = 4;
 var contrainYMovement = false;
 var contrainXMovement = false;
 
@@ -187,12 +187,12 @@ function clearCanvas()
 
 function processKey(event)
 {
-    if(event.keyCode == 67) //Key:c, Clear
+    if('c' == event.key)
     {
         clearCanvas();
     }
 
-    if(event.keyCode == 83) //Key:s, Save
+    if('d' == event.key)
     {
         var dataURL = canvas.toDataURL("image/png").replace("image/png", 
                                                             "image/octet-stream"); 

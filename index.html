@@ -23,7 +23,7 @@
     <div class="button" id="downloadButton">Download</div>
 
     <div id="sizeSelectorText"> Size: </div>
-    <input class="textBox" type="range" id="markerSizeSelector" min="2" max="100" value="2"/>
+    <input class="textBox" type="range" id="markerSizeSelector" min="4" max="100" value="4"/>
         
   </div>
 </body>
@@ -50,7 +50,9 @@
       canvas.style.zIndex = "0";
       cursorCanvas.zIndex = "300";
       selectorCanvas.zIndex = "1";
-      
+
+
+      markerSize = document.getElementById("markerSizeSelector").value;
       canvasContext.lineWidth = markerSize;
       canvasContext.fillStyle = "white";
       canvasContext.fillRect(0, 0, canvas.width, canvas.height);
