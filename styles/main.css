@@ -33,16 +33,12 @@ body,html
 }
 
 
-/* .toolbox .colorSwatch { */
-/*     position:relative; */
-
+.toolbox .colorSwatch {
     
 
-    
-/*     height:30px; */
-/*     width:30px; */
-/*     transition:0.3s; */
-/* } */
+    cursor:pointer;
+    transition:0.3s;
+}
 
 .displaySize
 {
@@ -149,6 +145,8 @@ body,html
     width:30px;
     transition:0.3s;
     visibility:hidden;
+
+    cursor:pointer;
 }
 
 
